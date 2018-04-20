@@ -63,7 +63,7 @@ process circos {
 	tag { name }	
 	
 	output:
-    file("${params.circosName}") into publishChannel
+    file("${params.circosName}/*") into publishChannel
  
     script:
     """
