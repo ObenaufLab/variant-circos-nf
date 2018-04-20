@@ -76,7 +76,7 @@ process circos {
 	
 	sed -i 's/GENOME/karyotype.human.hg38.txt/g' ${params.circosName}/etc/circos.conf
 	
-	circos
+	(cd  ${params.circosName} ; circos)
 
     """
 }
