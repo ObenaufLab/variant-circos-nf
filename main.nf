@@ -61,6 +61,9 @@ process circos {
 	//baseName = workflow.scriptFile.getParent()
 	
 	tag { name }	
+	
+	output:
+    file("${params.circosName}") into publishChannel
  
     script:
     """
