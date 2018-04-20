@@ -45,8 +45,10 @@ def helpMessage() {
         standard            local execution
         singularity         local execution with singularity
         ii2                 SLURM execution with singularity on IMPIMBA2
+        
     Docker:
     obenauflab/variant-circos-nf:latest
+    
     Author:
     Tobias Neumann (tobias.neumann@imp.ac.at)
     """.stripIndent()
@@ -73,6 +75,8 @@ process circos {
 	VCFtoCircosTranslocationConverter.py -v ${params.translocationFile} > ${params.circosName}/data/translocations.txt
 	
 	sed -i 's/GENOME/karyotype.human.hg38.txt/g' ${params.circosName}/etc/circos.conf
+	
+	circos
 
     """
 }

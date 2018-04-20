@@ -2,7 +2,7 @@
 
 # Date located in: -
 from __future__ import print_function
-import sys, os, re
+import os, re, gzip
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
