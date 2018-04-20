@@ -70,7 +70,7 @@ process circos {
     VCFtoCircosCNVConverter.py -v ${params.cnvFile} > ${params.circosName}/data/cnv.txt
     
     bedtools makewindows -g ${workflow.scriptFile.getParent()}/data/hg38.chrom.sizes -w 1000000 > ${params.circosName}/data/hg38windows.bed
-	bedtools coverage -b ${params.circosName}/data/hg38windows.bed -a ${params.snvFile} -counts | sed -e 's/chr/hs/g' > ${params.circosName}/data/snv.txt
+	bedtools coverage -a ${params.circosName}/data/hg38windows.bed -b ${params.snvFile} -counts | sed -e 's/chr/hs/g' > ${params.circosName}/data/snv.txt
 	
 	VCFtoCircosTranslocationConverter.py -v ${params.translocationFile} > ${params.circosName}/data/translocations.txt
 	
